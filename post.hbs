@@ -1,13 +1,12 @@
-{{!< default}}
-
+{{#*inline "body"}}
 <div class="content-area">
 <main class="site-main">
 
-    {{#post}}
+    {{#with post}}
 
     <article class="{{post_class}} gh-article">
         <header class="gh-article-header gh-canvas">
-            {{> "feature-image"}}
+            {{> partials/feature-image}}
 
             <h1 class="gh-article-title">{{title}}</h1>
 
@@ -17,7 +16,7 @@
         </header>
 
         <div class="gh-content gh-canvas">
-            {{content}}
+            {{{content}}}
         </div>
     </article>
 
@@ -27,11 +26,13 @@
         </div>
     {{/if}}
 
-    {{/post}}
+    {{/with}}
 
-    {{#if @custom.show_related_posts}}
-        {{> "related-posts"}}
+    {{#if @root.custom.show_related_posts}}
+        {{> partials/related-posts}}
     {{/if}}
 
 </main>
 </div>
+{{/inline}}
+{{> default}}

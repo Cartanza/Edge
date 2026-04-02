@@ -2,12 +2,12 @@
 {{#if related}}
     <section class="related-posts">
         <div class="post-feed">
-        {{#if @custom.related_posts_title}}
-            <h3 class="related-title">{{@custom.related_posts_title}}</h3>
+        {{#if @root.custom.related_posts_title}}
+            <h3 class="related-title">{{@root.custom.related_posts_title}}</h3>
         {{/if}}
             {{#foreach posts}}
                 <div class="grid-item grid-sizer"></div>
-                {{> "loop"}}
+                {{> partials/loop}}
             {{/foreach}}
         </div>
     </section>
